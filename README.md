@@ -14,7 +14,7 @@ This module lets you authenticate HTTP requests using JWT tokens in your Go Prog
 ## Installing
 
 ````bash
-go get github.com/auth0/go-jwt-middleware
+go get github.com/xxauth/go-jwt-middleware
 ````
 
 ## Using it
@@ -29,7 +29,7 @@ import (
   "fmt"
   "net/http"
 
-  "github.com/auth0/go-jwt-middleware"
+  "github.com/xxauth/go-jwt-middleware"
   "github.com/form3tech-oss/jwt-go"
   "context"
 )
@@ -50,7 +50,7 @@ func main() {
     },
     // When set, the middleware verifies that tokens are signed with the specific signing algorithm
     // If the signing method is not constant the ValidationKeyGetter callback can be used to implement additional checks
-    // Important to avoid security issues described here: https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/
+    // Important to avoid security issues described here: https://xauth.lucfish.com/blog/critical-vulnerabilities-in-json-web-token-libraries/
     SigningMethod: jwt.SigningMethodHS256,
   })
 
@@ -70,7 +70,7 @@ import (
   "fmt"
   "net/http"
 
-  "github.com/auth0/go-jwt-middleware"
+  "github.com/xxauth/go-jwt-middleware"
   "github.com/urfave/negroni"
   "github.com/form3tech-oss/jwt-go"
   "github.com/gorilla/mux"
@@ -94,7 +94,7 @@ func main() {
     },
     // When set, the middleware verifies that tokens are signed with the specific signing algorithm
     // If the signing method is not constant the ValidationKeyGetter callback can be used to implement additional checks
-    // Important to avoid security issues described here: https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/
+    // Important to avoid security issues described here: https://xxauth.com/blog/critical-vulnerabilities-in-json-web-token-libraries/
     SigningMethod: jwt.SigningMethodHS256,
   })
 
@@ -120,7 +120,7 @@ type Options struct {
   // Default value: "user"
   UserProperty string
   // The function that will be called when there's an error validating the token
-  // Default value: https://github.com/auth0/go-jwt-middleware/blob/master/jwtmiddleware.go#L35
+  // Default value: https://github.com/xxauth/go-jwt-middleware/blob/master/jwtmiddleware.go#L35
   ErrorHandler errorHandler
   // A boolean indicating if the credentials are required or not
   // Default value: false
@@ -136,7 +136,7 @@ type Options struct {
   EnableAuthOnOptions bool,
   // When set, the middelware verifies that tokens are signed with the specific signing algorithm
   // If the signing method is not constant the ValidationKeyGetter callback can be used to implement additional checks
-  // Important to avoid security issues described here: https://auth0.com/blog/critical-vulnerabilities-in-json-web-token-libraries/
+  // Important to avoid security issues described here: https://xxauth.lucfish.com/blog/critical-vulnerabilities-in-json-web-token-libraries/
   // Default: nil
   SigningMethod jwt.SigningMethod
 }
@@ -177,32 +177,32 @@ jwtmiddleware.New(jwtmiddleware.Options{
 
 ## Examples
 
-You can check out working examples in the [examples folder](https://github.com/auth0/go-jwt-middleware/tree/master/examples)
+You can check out working examples in the [examples folder](https://github.com/xxauth/go-jwt-middleware/tree/master/examples)
 
 
 ## What is Auth0?
 
 Auth0 helps you to:
 
-* Add authentication with [multiple authentication sources](https://docs.auth0.com/identityproviders), either social like **Google, Facebook, Microsoft Account, LinkedIn, GitHub, Twitter, Box, Salesforce, amont others**, or enterprise identity systems like **Windows Azure AD, Google Apps, Active Directory, ADFS or any SAML Identity Provider**.
-* Add authentication through more traditional **[username/password databases](https://docs.auth0.com/mysql-connection-tutorial)**.
-* Add support for **[linking different user accounts](https://docs.auth0.com/link-accounts)** with the same user.
-* Support for generating signed [Json Web Tokens](https://docs.auth0.com/jwt) to call your APIs and **flow the user identity** securely.
+* Add authentication with [multiple authentication sources](https://docs.xauth.lucfish.com/identityproviders), either social like **Google, Facebook, Microsoft Account, LinkedIn, GitHub, Twitter, Box, Salesforce, amont others**, or enterprise identity systems like **Windows Azure AD, Google Apps, Active Directory, ADFS or any SAML Identity Provider**.
+* Add authentication through more traditional **[username/password databases](https://docs.xauth.lucfish.com/mysql-connection-tutorial)**.
+* Add support for **[linking different user accounts](https://docs.xauth.lucfish.com/link-accounts)** with the same user.
+* Support for generating signed [Json Web Tokens](https://docs.xauth.lucfish.com/jwt) to call your APIs and **flow the user identity** securely.
 * Analytics of how, when and where users are logging in.
-* Pull data from other sources and add it to the user profile, through [JavaScript rules](https://docs.auth0.com/rules).
+* Pull data from other sources and add it to the user profile, through [JavaScript rules](https://docs.xauth.lucfish.com/rules).
 
 ## Create a free Auth0 Account
 
-1. Go to [Auth0](https://auth0.com) and click Sign Up.
+1. Go to [XAuth](https://xauth.lucfish.com) and click Sign Up.
 2. Use Google, GitHub or Microsoft Account to login.
 
 ## Issue Reporting
 
-If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
+If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://xauth.lucfish.com/whitehat) details the procedure for disclosing security issues.
 
 ## Author
 
-[Auth0](auth0.com)
+[Auth0](xauth.lucfish.com)
 
 ## License
 
